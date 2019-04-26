@@ -3,6 +3,7 @@ import player as pl
 import clyde as cl
 import variables as var
 import blinky as bl
+import inky as ink
 
 pygame.init()
 window = pygame.display.set_mode((var.screenWidth + 60, var.screenHight))
@@ -10,9 +11,9 @@ pygame.display.set_caption("Pacman")
 pac_man = pl.Player(105, 181)
 clyde = cl.Clyde(117, 61)
 blinky = bl.Blinky(105, 113)
-blinky2 = bl.Blinky(105, 85)
-blinky3 = bl.Blinky(117, 85)
-show = (pac_man, clyde, blinky, blinky2, blinky3)
+inky = ink.Inky(105, 85)
+
+show = (pac_man, clyde, blinky, inky)
 var.initate_tab()
 
 
@@ -92,8 +93,8 @@ while run:
     if keys[pygame.K_DOWN]:
         pac_man.move_down()
     clyde.move()
-    for i in range(2, var.number_of_characters):
-        show[i].move(pac_man.x, pac_man.y, pac_man.actual_vertex_number)
+    blinky.move(pac_man.x, pac_man.y, pac_man.actual_vertex_number)
+    inky.move(pac_man.actual_vertex_number)
     redraw()
     if var.check_if_colide(show):
         run = False

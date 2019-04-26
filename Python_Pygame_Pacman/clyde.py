@@ -26,7 +26,6 @@ class Clyde(character.Character):
             rd = random.randint(1, 67)
             self.route = var.graph.dijkstra(self.actual_vertex_number, rd)
             self.last_vertices = (self.actual_vertex_number, rd)
-        print(self.route)
         a, b = var.vertex[self.route[0]], var.vertex[self.route[1]]
         x = a[0] - b[0]
         y = a[1] - b[1]
