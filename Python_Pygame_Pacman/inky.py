@@ -15,7 +15,7 @@ class Inky(character.Character):
         self.route = []
         self.vertices = [self.actual_vertex_number]
 
-    def move(self,pac_man_vertex_number):
+    def move(self, pac_man_vertex_number):
         if var.check_if_new_vertex_position(self.x, self.y):
             self.actual_vertex_number = (var.get_vertex_number(self.x, self.y))
             self.route = var.graph.dijkstra(self.actual_vertex_number, self.vertices[0])

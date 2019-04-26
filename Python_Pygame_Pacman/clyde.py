@@ -15,7 +15,6 @@ class Clyde(character.Character):
         self.actual_vertex_number = var.get_vertex_number(x, y)
         self.last_vertices = (self.actual_vertex_number, self.actual_vertex_number)
         self.route = []
-        self.helper = 0
 
     def move(self):
 

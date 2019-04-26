@@ -6,7 +6,7 @@ import blinky as bl
 import inky as ink
 
 pygame.init()
-window = pygame.display.set_mode((var.screenWidth + 60, var.screenHight))
+window = pygame.display.set_mode((var.screenWidth, var.screenHight))
 pygame.display.set_caption("Pacman")
 pac_man = pl.Player(105, 181)
 clyde = cl.Clyde(117, 61)

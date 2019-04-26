@@ -9,7 +9,6 @@ class Character:
         self.look_at = 0
         self.animation_mode = 0
         self.inactivity = 0
-        self.actual_vertex_position = (x, y)
         self.actual_vertex_number = var.get_vertex_number(x, y)
 
     def move_right(self):

@@ -10,7 +10,6 @@ screenWidth = 224
 screenHight = 248
 pacmanWidth = 13
 pacmanHight = 13
-halfofPacman = 6
 number_of_characters = 0
 board = pygame.image.load("Sprite.png")
 
@@ -193,7 +192,6 @@ def initate_tab():
     for i in range(screenWidth + 20):
         help = [0 for x in range(screenHight)]
         tab.append(help)
-    #print(tab)
     for i in wall:
         for x in range(wall[i][0], wall[i][2] + wall[i][0]):
             for y in range(wall[i][1], wall[i][3] + wall[i][1]):
