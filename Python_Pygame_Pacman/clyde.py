@@ -1,6 +1,7 @@
 import character
 import random
 import variables as var
+import exceptions
 
 
 class Clyde(character.Character):
@@ -36,6 +37,9 @@ class Clyde(character.Character):
             self.move_left()
         if x < 0:
             self.move_right()
+        if len(self.route) == 0:
+            raise exceptions.MoverError
+
 
 
 

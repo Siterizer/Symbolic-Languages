@@ -4,6 +4,7 @@ import clyde as cl
 import variables as var
 import blinky as bl
 import inky as ink
+import exceptions
 
 pygame.init()
 window = pygame.display.set_mode((var.screenWidth, var.screenHight))
@@ -25,8 +26,8 @@ def redraw():
             window.blit(var.board, (var.coin[i][0], var.coin[i][1]), (11, 11, 2, 2))
         elif var.coin[i][2] == 2:
             window.blit(var.board, (var.coin[i][0], var.coin[i][1]), (8, 184, 8, 8))
-    for i in var.vertex:
-        pygame.draw.rect(window, (255, 0, 0), (var.vertex[i][0], var.vertex[i][1], 2, 2))
+    #for i in var.vertex:
+        #pygame.draw.rect(window, (255, 0, 0), (var.vertex[i][0], var.vertex[i][1], 2, 2))
     for i in range(0, var.number_of_characters):
         if show[i].animation_mode:
             if show[i].inactivity:
@@ -92,7 +93,10 @@ while run:
         pac_man.move_up()
     if keys[pygame.K_DOWN]:
         pac_man.move_down()
-    clyde.move()
+    try:
+        clyde.move()
+    except exceptions.MoverError:
+        print("SOMETHINKG IS NOT YES")
     blinky.move(pac_man.x, pac_man.y, pac_man.actual_vertex_number)
     inky.move(pac_man.actual_vertex_number)
     redraw()
