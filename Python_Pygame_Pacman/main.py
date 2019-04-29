@@ -26,8 +26,8 @@ def redraw():
             window.blit(var.board, (var.coin[i][0], var.coin[i][1]), (11, 11, 2, 2))
         elif var.coin[i][2] == 2:
             window.blit(var.board, (var.coin[i][0], var.coin[i][1]), (8, 184, 8, 8))
-    #for i in var.vertex:
-        #pygame.draw.rect(window, (255, 0, 0), (var.vertex[i][0], var.vertex[i][1], 2, 2))
+    for i in var.vertex:
+        pygame.draw.rect(window, (255, 0, 0), (var.vertex[i][0], var.vertex[i][1], 2, 2))
     for i in range(0, var.number_of_characters):
         if show[i].animation_mode:
             if show[i].inactivity:

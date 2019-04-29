@@ -6,13 +6,7 @@ import variables as var
 class Blinky(character.Character):
 
     def __init__(self, x, y):
-        var.number_of_characters += 1
-        self.x = x
-        self.y = y
-        self.look_at = 0
-        self.animation_mode = 0
-        self.inactivity = 0
-        self.actual_vertex_number = var.get_vertex_number(x, y)
+        super().__init__(x, y)
         self.last_vertices = ()
         self.route = []
         self.helper = 0
